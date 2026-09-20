@@ -1,0 +1,222 @@
+/**
+ * Compatibilité thème sombre pour les écrans utilisant encore des couleurs « maquette » en dur.
+ * Les composants shadcn (bg-card, text-foreground, etc.) suivent déjà les variables CSS.
+ */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* ── Fonds page / panneaux ── */
+[data-theme="dark"] .bg-\[\#EFF1F8\],
+[data-theme="dark"] .bg-\[\#eff1f8\],
+[data-theme="dark"] .bg-\[\#eef1f8\],
+[data-theme="dark"] .bg-\[\#EEF1F8\] {
+  background-color: hsl(var(--background)) !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: hsl(var(--card)) !important;
+}
+
+/* Modales / popups : fond blanc et texte lisible en thème sombre */
+[data-theme="dark"] .ec-popup-light {
+  background-color: #ffffff !important;
+  color: #263248 !important;
+  border-color: #e8edf5 !important;
+}
+
+[data-theme="dark"] .ec-popup-light .bg-white,
+[data-theme="dark"] .ec-popup-light.bg-white {
+  background-color: #ffffff !important;
+}
+
+[data-theme="dark"] .ec-popup-light .text-slate-900,
+[data-theme="dark"] .ec-popup-light .text-slate-800,
+[data-theme="dark"] .ec-popup-light .text-slate-700 {
+  color: #1e293b !important;
+}
+
+[data-theme="dark"] .ec-popup-light .text-slate-600,
+[data-theme="dark"] .ec-popup-light .text-slate-500,
+[data-theme="dark"] .ec-popup-light .text-muted-foreground {
+  color: #64748b !important;
+}
+
+[data-theme="dark"] .ec-popup-light .text-\[\#263248\],
+[data-theme="dark"] .ec-popup-light .text-\[\#6D7A91\],
+[data-theme="dark"] .ec-popup-light .text-\[\#2762C4\],
+[data-theme="dark"] .ec-popup-light .text-\[\#1F4C9A\],
+[data-theme="dark"] .ec-popup-light .text-\[\#1B4591\] {
+  color: #263248 !important;
+}
+
+[data-theme="dark"] .ec-popup-light .text-\[\#2762C4\],
+[data-theme="dark"] .ec-popup-light .text-\[\#1F4C9A\],
+[data-theme="dark"] .ec-popup-light .text-\[\#1B4591\] {
+  color: #1b4591 !important;
+}
+
+[data-theme="dark"] .ec-popup-light .bg-\[\#ECF4FF\],
+[data-theme="dark"] .ec-popup-light .bg-\[\#F0F7FF\],
+[data-theme="dark"] .ec-popup-light .bg-\[\#F5F9FF\],
+[data-theme="dark"] .ec-popup-light .bg-\[\#F8FBFF\],
+[data-theme="dark"] .ec-popup-light .bg-\[\#f4f7fb\],
+[data-theme="dark"] .ec-popup-light .bg-\[\#E8F1FC\],
+[data-theme="dark"] .ec-popup-light .bg-slate-50,
+[data-theme="dark"] .ec-popup-light .bg-slate-100 {
+  background-color: #f0f7ff !important;
+}
+
+[data-theme="dark"] .ec-popup-light .border-slate-200,
+[data-theme="dark"] .ec-popup-light .border-slate-200\/80,
+[data-theme="dark"] .ec-popup-light .border-\[\#E8EDF5\],
+[data-theme="dark"] .ec-popup-light .border-\[\#F1F4F9\],
+[data-theme="dark"] .ec-popup-light .border-\[\#E6EAF2\],
+[data-theme="dark"] .ec-popup-light .border-\[\#E2E8F0\] {
+  border-color: #e8edf5 !important;
+}
+
+[data-theme="dark"] .bg-\[\#F2F5FB\],
+[data-theme="dark"] .bg-\[\#F1F4F9\],
+[data-theme="dark"] .bg-\[\#E6EAF2\],
+[data-theme="dark"] .bg-\[\#E8EDF5\],
+[data-theme="dark"] .bg-\[\#E2E8F0\],
+[data-theme="dark"] .bg-\[\#F1F5F9\],
+[data-theme="dark"] .bg-slate-50,
+[data-theme="dark"] .bg-slate-100,
+[data-theme="dark"] .bg-gray-50,
+[data-theme="dark"] .bg-gray-100 {
+  background-color: hsl(var(--muted)) !important;
+}
+
+[data-theme="dark"] .bg-\[\#ECF4FF\],
+[data-theme="dark"] .bg-\[\#F0F7FF\],
+[data-theme="dark"] .bg-\[\#F5F9FF\],
+[data-theme="dark"] .bg-\[\#F8FBFF\],
+[data-theme="dark"] .bg-\[\#f4f7fb\],
+[data-theme="dark"] .bg-\[\#E8F1FC\],
+[data-theme="dark"] .bg-\[\#F8FAFC\],
+[data-theme="dark"] .bg-\[\#E6EAFD\],
+[data-theme="dark"] .bg-blue-50,
+[data-theme="dark"] .hover\:bg-blue-50\/50:hover {
+  background-color: hsl(var(--muted)) !important;
+}
+
+[data-theme="dark"] .hover\:bg-\[\#F2F5FB\]:hover,
+[data-theme="dark"] .hover\:bg-\[\#ECF4FF\]:hover,
+[data-theme="dark"] .hover\:bg-\[\#ECF4FF\]\/50:hover,
+[data-theme="dark"] .hover\:bg-\[\#ECF4FF\]\/60:hover,
+[data-theme="dark"] .hover\:bg-\[\#DCEAFB\]:hover,
+[data-theme="dark"] .hover\:bg-\[\#D8DFF9\]:hover,
+[data-theme="dark"] .hover\:bg-slate-50:hover {
+  background-color: hsl(var(--surface-hover)) !important;
+}
+
+/* ── Textes ── */
+[data-theme="dark"] .text-slate-900,
+[data-theme="dark"] .text-slate-800,
+[data-theme="dark"] .text-slate-700,
+[data-theme="dark"] .text-gray-900,
+[data-theme="dark"] .text-gray-800 {
+  color: hsl(var(--foreground)) !important;
+}
+
+[data-theme="dark"] .text-slate-600,
+[data-theme="dark"] .text-slate-500,
+[data-theme="dark"] .text-slate-400,
+[data-theme="dark"] .text-gray-600,
+[data-theme="dark"] .text-gray-500 {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+[data-theme="dark"] .text-\[\#263248\],
+[data-theme="dark"] .text-\[\#6D7A91\] {
+  color: hsl(var(--foreground)) !important;
+}
+
+[data-theme="dark"] .text-\[\#2762C4\],
+[data-theme="dark"] .text-\[\#1F4C9A\],
+[data-theme="dark"] .text-\[\#1B4591\] {
+  color: hsl(var(--primary)) !important;
+}
+
+[data-theme="dark"] .placeholder\:text-slate-400::placeholder {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+/* ── Bordures ── */
+[data-theme="dark"] .border-slate-200,
+[data-theme="dark"] .border-slate-200\/80,
+[data-theme="dark"] .border-slate-100,
+[data-theme="dark"] .border-slate-100\/90,
+[data-theme="dark"] .border-\[\#E8EDF5\],
+[data-theme="dark"] .border-\[\#F1F4F9\],
+[data-theme="dark"] .border-\[\#E6EAF2\],
+[data-theme="dark"] .border-\[\#E2E8F0\],
+[data-theme="dark"] .border-\[\#CFE3FF\],
+[data-theme="dark"] .border-\[\#D7E6FF\],
+[data-theme="dark"] .border-\[\#93C5FD\] {
+  border-color: hsl(var(--border)) !important;
+}
+
+/* ── Ombres plus douces ── */
+[data-theme="dark"] .shadow-sm,
+[data-theme="dark"] .shadow-md,
+[data-theme="dark"] .shadow-lg,
+[data-theme="dark"] .shadow-xl,
+[data-theme="dark"] .shadow-2xl {
+  --tw-shadow-color: hsl(240 10% 0% / 0.35);
+}
+
+/* ── Scrollbar bleue maquette ── */
+[data-theme="dark"] .custom-scrollbar-blue {
+  scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+}
+
+[data-theme="dark"] .custom-scrollbar-blue::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+[data-theme="dark"] .custom-scrollbar-blue::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+}
+
+/* ── Métrés / consultations (classes partagées) ── */
+[data-theme="dark"] .metres-btn-pill-outline {
+  background-color: hsl(var(--card)) !important;
+  color: hsl(var(--primary)) !important;
+  border-color: hsl(var(--primary)) !important;
+}
+
+[data-theme="dark"] .metres-btn-pill-outline:hover {
+  background-color: hsl(var(--primary) / 0.12) !important;
+}
+
+[data-theme="dark"] .metres-status-badge {
+  background-color: hsl(var(--warning-muted)) !important;
+  color: hsl(var(--warning)) !important;
+}
+
+[data-theme="dark"] .metres-status-badge-approved {
+  background-color: hsl(var(--success-muted)) !important;
+  color: hsl(var(--success)) !important;
+}
+
+[data-theme="dark"] .metres-status-badge-rejected {
+  background-color: hsl(var(--destructive-light)) !important;
+  color: hsl(var(--destructive)) !important;
+}
+
+/* Tables / lignes alternées projet */
+[data-theme="dark"] tr.hover\:bg-blue-50\/50:hover,
+[data-theme="dark"] .group.hover\:bg-blue-50\/50:hover {
+  background-color: hsl(var(--muted) / 0.45) !important;
+}
+
+/* Inputs Auth / formulaires fond bleu clair */
+[data-theme="dark"] input.border-transparent.bg-\[\#ECF4FF\],
+[data-theme="dark"] textarea.border-transparent.bg-\[\#ECF4FF\] {
+  background-color: hsl(var(--input)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--border)) !important;
+}

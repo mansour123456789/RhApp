@@ -1,0 +1,618 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import './styles/dark-theme-compat.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors - Logo Blue Gradient */
+    --primary: 205 100% 45%; /* Medium logo blue */
+    --primary-hover: 205 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 262 83% 95%;
+    --primary-light: 262 83% 90%;
+    --primary-dark: 262 83% 20%;
+    
+    /* Background & Surface — gris-bleu page (#EFF1F8) */
+    --background: 228 33% 95%;
+    --foreground: 240 10% 10%; /* Deep charcoal */
+    --surface: 0 0% 100%;
+    --surface-elevated: 0 0% 100%;
+    --surface-subtle: 240 10% 98%;
+    --surface-hover: 240 10% 96%;
+    
+    /* Card - Clean and Modern */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+    --card-border: 240 10% 90%;
+    --card-shadow: 240 10% 85%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+       /* Excel Editor - Refined */
+    /* Secondary - Complementary Teal */
+    --secondary: 180 40% 96%;
+    --secondary-foreground: 180 40% 25%;
+    --secondary-hover: 180 40% 90%;
+    --secondary-border: 180 40% 85%;
+    
+    /* Muted - Sophisticated Grays */
+    --muted: 240 10% 96%;
+    --muted-foreground: 240 10% 45%;
+    --muted-light: 240 10% 98%;
+    
+    /* Accent - Logo Blue Variant */
+    --accent: 205 100% 52%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 205 100% 47%;
+    --accent-light: 205 100% 96%;
+    
+    /* Destructive - Modern Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 84% 95%;
+    
+    /* Success - Fresh Green */
+    --success: 142 71% 45%; /* Fresh green */
+    --success-foreground: 0 0% 100%;
+    --success-muted: 142 71% 95%;
+    --success-light: 142 71% 90%;
+    
+    /* Warning - Warm Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-muted: 38 92% 95%;
+    --warning-light: 38 92% 90%;
+    
+    /* Info - Deep Blue */
+    --info: 205 100% 45%;
+    --info-foreground: 0 0% 100%;
+    --info-muted: 217 91% 95%;
+    
+    /* Border & Input - Refined */
+    --border: 240 10% 90%;
+    --input: 240 10% 95%;
+    --ring: 205 100% 45%;
+    --ring-light: 205 100% 75%;
+    
+    /* Sidebar - Deep Blue */
+    --sidebar-bg: 210 90% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-muted: 210 90% 28%;
+    --sidebar-accent: 205 100% 50%;
+    --sidebar-border: 210 90% 30%;
+    --sidebar-hover: 210 90% 22%;
+    
+    /* Excel Editor - Refined */
+    --excel-header: 210 90% 98%;
+    --excel-border: 240 10% 88%;
+    --excel-selected: 205 100% 95%;
+    --excel-active: 205 100% 45%;
+    
+    /* Status Colors - Modern Palette */
+    --status-draft: 240 10% 60%;
+    --status-active: 205 100% 45%;
+    --status-completed: 142 71% 45%;
+    --status-pending: 38 92% 50%;
+    
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(205 100% 45%) 0%, hsl(195 100% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(205 100% 52%) 0%, hsl(195 100% 60%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(240 10% 98%) 100%);
+    
+    /* Shadows - Soft and Modern */
+    --shadow-sm: 0 1px 2px 0 hsl(240 10% 90% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(240 10% 90% / 0.3), 0 2px 4px -2px hsl(240 10% 90% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(240 10% 90% / 0.3), 0 4px 6px -4px hsl(240 10% 90% / 0.3);
+    --shadow-xl: 0 20px 25px -5px hsl(240 10% 90% / 0.3), 0 8px 10px -6px hsl(240 10% 90% / 0.3);
+    --shadow-glow: 0 0 20px hsl(205 100% 45% / 0.15);
+    
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+  }
+
+  [data-theme="dark"] {
+    /* Primary Colors - Dark Logo Blue */
+    --primary: 205 100% 60%;
+    --primary-hover: 205 100% 65%;
+    --primary-foreground: 240 10% 10%;
+    --primary-muted: 262 83% 20%;
+    --primary-light: 262 83% 25%;
+    --primary-dark: 262 83% 10%;
+    
+    /* Background & Surface - Deep Dark */
+    --background: 240 10% 8%; /* Deep dark */
+    --foreground: 240 10% 98%;
+    --surface: 240 10% 12%;
+    --surface-elevated: 240 10% 15%;
+    --surface-subtle: 240 10% 10%;
+    --surface-hover: 240 10% 18%;
+    
+    /* Card - Dark Elegance */
+    --card: 240 10% 12%;
+    --card-foreground: 240 10% 98%;
+    --card-border: 240 10% 20%;
+    --card-shadow: 240 10% 5%;
+    
+    /* Popover */
+    --popover: 240 10% 12%;
+    --popover-foreground: 240 10% 98%;
+    
+    /* Secondary - Dark Teal */
+    --secondary: 180 25% 20%;
+    --secondary-foreground: 180 25% 90%;
+    --secondary-hover: 180 25% 25%;
+    --secondary-border: 180 25% 30%;
+    
+    /* Muted - Dark Grays */
+    --muted: 240 10% 18%;
+    --muted-foreground: 240 10% 65%;
+    --muted-light: 240 10% 22%;
+    
+    /* Accent - Dark Logo Blue */
+    --accent: 205 100% 60%;
+    --accent-foreground: 240 10% 10%;
+    --accent-hover: 205 100% 70%;
+    --accent-light: 205 100% 25%;
+    
+    /* Destructive - Dark Red */
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 240 10% 98%;
+    --destructive-light: 0 63% 25%;
+    
+    /* Success - Dark Green */
+    --success: 142 71% 40%;
+    --success-foreground: 240 10% 98%;
+    --success-muted: 142 71% 20%;
+    --success-light: 142 71% 25%;
+    
+    /* Warning - Dark Amber */
+    --warning: 38 92% 45%;
+    --warning-foreground: 240 10% 98%;
+    --warning-muted: 38 92% 20%;
+    --warning-light: 38 92% 25%;
+    
+    /* Border & Input - Dark */
+    --border: 240 10% 20%;
+    --input: 240 10% 18%;
+    --ring: 205 100% 60%;
+    --ring-light: 205 100% 45%;
+    
+    /* Sidebar - Dark Blue */
+    --sidebar-bg: 210 90% 10%;
+    --sidebar-foreground: 240 10% 98%;
+    --sidebar-muted: 210 90% 18%;
+    --sidebar-accent: 205 100% 60%;
+    --sidebar-border: 210 90% 22%;
+    --sidebar-hover: 210 90% 14%;
+    
+    /* Excel Editor - Dark */
+    --excel-header: 240 10% 15%;
+    --excel-border: 240 10% 25%;
+    --excel-selected: 240 10% 20%;
+    --excel-active: 205 100% 60%;
+    
+    /* Custom Gradients - Dark */
+    --gradient-primary: linear-gradient(135deg, hsl(205 100% 60%) 0%, hsl(195 100% 65%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(205 100% 60%) 0%, hsl(195 100% 68%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(240 10% 12%) 0%, hsl(240 10% 15%) 100%);
+    
+    /* Shadows - Dark and Subtle */
+    --shadow-sm: 0 1px 2px 0 hsl(240 10% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(240 10% 0% / 0.3), 0 2px 4px -2px hsl(240 10% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(240 10% 0% / 0.3), 0 4px 6px -4px hsl(240 10% 0% / 0.3);
+    --shadow-xl: 0 20px 25px -5px hsl(240 10% 0% / 0.3), 0 8px 10px -6px hsl(240 10% 0% / 0.3);
+    --shadow-glow: 0 0 20px hsl(205 100% 60% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Même couleur que le thème sur toute la surface du document (évite une bande blanche en haut au scroll / overscroll, header transparent, etc.) */
+  html {
+    @apply bg-background;
+  }
+
+  body {
+    @apply min-h-dvh bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  #root {
+    @apply min-h-dvh bg-background;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Sidebar styles */
+  .sidebar {
+    @apply bg-sidebar text-sidebar-foreground;
+    background: hsl(var(--sidebar-bg));
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200;
+    @apply text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-muted;
+  }
+
+  .sidebar-item.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Excel editor styles */
+  .excel-cell {
+    @apply border-r border-b border-excel-border px-2 py-1.5 text-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset;
+    min-width: 100px;
+    background: hsl(var(--surface));
+  }
+
+  .excel-cell.selected {
+    background: hsl(var(--excel-selected));
+  }
+
+  .excel-header {
+    @apply font-medium text-center;
+    background: hsl(var(--excel-header));
+  }
+
+  /* Status badges */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-draft {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .status-active {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .status-completed {
+    @apply bg-success-muted text-success;
+  }
+
+  .status-pending {
+    @apply bg-warning-muted text-warning;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:border-primary/20;
+  }
+
+  /* Table styles */
+  .data-table {
+    @apply w-full border-collapse;
+  }
+
+  .data-table th {
+    @apply text-left text-xs font-medium text-muted-foreground uppercase tracking-wider;
+    @apply px-4 py-3 border-b border-border bg-muted/50;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 border-b border-border;
+  }
+
+  .data-table tr:hover td {
+    @apply bg-muted/30;
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Scrollbar bleue maquette (#1B4591) */
+  .custom-scrollbar-blue {
+    scrollbar-width: thin;
+    scrollbar-color: #1b4591 #e8eef5;
+  }
+
+  .custom-scrollbar-blue::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar-blue::-webkit-scrollbar-track {
+    background: #e8eef5;
+    border-radius: 999px;
+  }
+
+  .custom-scrollbar-blue::-webkit-scrollbar-thumb {
+    background: #1b4591;
+    border-radius: 999px;
+    min-height: 2.5rem;
+  }
+
+  .custom-scrollbar-blue::-webkit-scrollbar-thumb:hover {
+    background: #163a75;
+  }
+
+  /* Scrollbar bleue fine (popovers filtres — maquette lots) */
+  .custom-scrollbar-blue-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #1b4591 #cdd6fb;
+  }
+
+  .custom-scrollbar-blue-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .custom-scrollbar-blue-thin::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+
+  .custom-scrollbar-blue-thin::-webkit-scrollbar-track {
+    background: rgba(205, 214, 251, 0.55);
+    border-radius: 999px;
+  }
+
+  .custom-scrollbar-blue-thin::-webkit-scrollbar-thumb {
+    background: #1b4591;
+    border-radius: 999px;
+    min-height: 2rem;
+  }
+
+  .custom-scrollbar-blue-thin::-webkit-scrollbar-thumb:hover {
+    background: #163a75;
+  }
+
+  /* Boutons page détail projet — #1B4591 (évite le dégradé default) */
+  .project-details-page .bg-gradient-to-r.from-primary.to-sky-500,
+  .project-details-page .from-primary.to-sky-500 {
+    background-color: #1b4591 !important;
+    background-image: none !important;
+    color: #fff !important;
+  }
+
+  .project-details-page .bg-gradient-to-r.from-primary.to-sky-500:hover,
+  .project-details-page .from-primary.to-sky-500:hover {
+    background-color: #163a7a !important;
+    color: #fff !important;
+  }
+
+  /* Pilule « Envoyer pour validation » — maquette Métrés */
+  .project-details-page .metres-btn-pill-outline {
+    color: #1b4591 !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid #1b4591 !important;
+    border-radius: 9999px !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .project-details-page .metres-btn-pill-outline:hover,
+  .project-details-page .metres-btn-pill-outline:focus-visible,
+  .project-details-page .metres-btn-pill-outline:active {
+    color: #1b4591 !important;
+    background-color: #ffffff !important;
+    border-color: #1b4591 !important;
+    transform: none !important;
+  }
+
+  .project-details-page .metres-status-badge {
+    color: #fe7448 !important;
+    background-color: #fff4f2 !important;
+    border: none !important;
+    font-weight: 500 !important;
+  }
+
+  .project-details-page .metres-status-badge-approved {
+    color: #16a148 !important;
+    background-color: #eefff1 !important;
+    border: none !important;
+    font-weight: 600 !important;
+  }
+
+  .project-details-page .metres-status-badge-rejected {
+    color: #dc2827 !important;
+    background-color: #fdeded !important;
+    border: none !important;
+    font-weight: 600 !important;
+  }
+
+  .project-details-page .metres-btn-reject,
+  .project-details-page .metres-btn-reject:hover,
+  .project-details-page .metres-btn-reject:active {
+    color: #ffffff !important;
+    background-color: #ef4444 !important;
+    background-image: none !important;
+    border-radius: 9999px !important;
+    transform: none !important;
+  }
+
+  .project-details-page .metres-btn-reject:hover {
+    background-color: #dc2626 !important;
+  }
+
+  .project-details-page .metres-btn-approve,
+  .project-details-page .metres-btn-approve:hover,
+  .project-details-page .metres-btn-approve:active {
+    color: #ffffff !important;
+    background-color: #22c55e !important;
+    background-image: none !important;
+    border-radius: 9999px !important;
+    transform: none !important;
+  }
+
+  .project-details-page .metres-btn-approve:hover {
+    background-color: #16a34a !important;
+  }
+}
+
+@layer utilities {
+  /* Personalized Gradient Text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  /* Personalized Glow Effects */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-glow-accent {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+  }
+  
+  /* Personalized Surface Effects */
+  .surface-gradient {
+    background-image: var(--gradient-surface);
+  }
+  
+  .surface-elevated {
+    background: hsl(var(--surface-elevated));
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* Personalized Border Effects */
+  .border-gradient {
+    position: relative;
+    background: linear-gradient(white, white) padding-box,
+                var(--gradient-primary) border-box;
+    border: 2px solid transparent;
+  }
+  
+  [data-theme="dark"] .border-gradient {
+    background: linear-gradient(hsl(var(--surface)), hsl(var(--surface))) padding-box,
+                var(--gradient-primary) border-box;
+  }
+
+  /* Personalized Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes bounceGentle {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4); }
+    50% { box-shadow: 0 0 0 10px hsl(var(--primary) / 0); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+
+  .notification-pulse::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: hsl(var(--destructive));
+    animation: pulse-ring 1.5s infinite;
+  }
+  
+  /* Personalized Status Indicators */
+  .status-pulse {
+    position: relative;
+  }
+  
+  .status-pulse::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(var(--success));
+    animation: pulse-ring 1.5s infinite;
+  }
+  
+  /* Personalized Focus Effects */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    focus-ring-color: hsl(var(--ring));
+  }
+  
+  .focus-glow {
+    @apply focus:outline-none focus:ring-2;
+    box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring));
+  }
+}
